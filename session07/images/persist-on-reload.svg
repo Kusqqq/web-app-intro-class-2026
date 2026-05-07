@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780" font-family="'Hiragino Sans', 'Yu Gothic', 'Meiryo', 'Noto Sans CJK JP', sans-serif">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#60a5fa"/>
+    </marker>
+    <marker id="arrow-emerald" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#34d399"/>
+    </marker>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <style>
+    .section-title { fill: #93c5fd; font-size: 22px; font-weight: bold; }
+    .browser { fill: #1e3a8a; stroke: #3b82f6; stroke-width: 2.5; }
+    .browser-bar { fill: #3b82f6; }
+    .browser-text { fill: #dbeafe; font-size: 20px; font-weight: bold; }
+    .browser-empty { fill: #334155; stroke: #94a3b8; stroke-width: 2.5; stroke-dasharray: 8 5; }
+    .browser-empty-bar { fill: #94a3b8; }
+    .browser-empty-text { fill: #cbd5e1; font-size: 18px; font-style: italic; }
+    .reload-label { fill: #93c5fd; font-size: 18px; font-weight: bold; }
+    .warning-box { fill: #fef3c7; stroke: #d97706; stroke-width: 2; }
+    .warning-text { fill: #451a03; font-size: 18px; font-weight: bold; }
+    .ok-text { fill: #a7f3d0; font-size: 20px; font-weight: bold; }
+    .server { fill: #155e75; stroke: #06b6d4; stroke-width: 2.5; }
+    .server-text { fill: #cffafe; font-size: 20px; font-weight: bold; }
+    .db { fill: #064e3b; stroke: #10b981; stroke-width: 2.5; }
+    .db-text { fill: #a7f3d0; font-size: 19px; font-weight: bold; }
+  </style>
+
+  <!-- ============================== -->
+  <!-- Section 1: これまで -->
+  <!-- ============================== -->
+  <text x="60" y="40" class="section-title">これまで（第4回: フロントエンドのみ）</text>
+
+  <!-- Browser before reload (with data) -->
+  <rect x="80" y="70" width="320" height="200" rx="10" class="browser"/>
+  <rect x="80" y="70" width="320" height="32" rx="10" class="browser-bar"/>
+  <circle cx="100" cy="86" r="6" fill="#1e3a8a"/>
+  <circle cx="120" cy="86" r="6" fill="#1e3a8a"/>
+  <circle cx="140" cy="86" r="6" fill="#1e3a8a"/>
+  <text x="240" y="148" text-anchor="middle" class="browser-text">TODO1</text>
+  <text x="240" y="190" text-anchor="middle" class="browser-text">TODO2</text>
+  <text x="240" y="240" text-anchor="middle" fill="#93c5fd" font-size="14">（メモリ上の配列）</text>
+
+  <!-- Reload arrow -->
+  <line x1="420" y1="170" x2="600" y2="170" stroke="#60a5fa" stroke-width="3"
+        marker-end="url(#arrow-blue)"/>
+  <text x="510" y="155" text-anchor="middle" class="reload-label">リロード</text>
+
+  <!-- Browser after reload (empty) -->
+  <rect x="620" y="70" width="320" height="200" rx="10" class="browser-empty"/>
+  <rect x="620" y="70" width="320" height="32" rx="10" class="browser-empty-bar"/>
+  <circle cx="640" cy="86" r="6" fill="#334155"/>
+  <circle cx="660" cy="86" r="6" fill="#334155"/>
+  <circle cx="680" cy="86" r="6" fill="#334155"/>
+  <text x="780" y="190" text-anchor="middle" class="browser-empty-text">（空）</text>
+
+  <!-- Warning -->
+  <rect x="970" y="140" width="200" height="60" rx="8" class="warning-box"/>
+  <text x="1070" y="177" text-anchor="middle" class="warning-text">データが消えた！</text>
+  <line x1="940" y1="170" x2="970" y2="170" stroke="#d97706" stroke-width="2"
+        marker-end="url(#arrow-slate)"/>
+
+  <!-- Divider -->
+  <line x1="60" y1="320" x2="1140" y2="320" stroke="#475569" stroke-width="1" stroke-dasharray="4 6"/>
+
+  <!-- ============================== -->
+  <!-- Section 2: 今回 -->
+  <!-- ============================== -->
+  <text x="60" y="365" class="section-title">今回（フルスタック版）</text>
+
+  <!-- Browser before reload -->
+  <rect x="80" y="395" width="320" height="200" rx="10" class="browser"/>
+  <rect x="80" y="395" width="320" height="32" rx="10" class="browser-bar"/>
+  <circle cx="100" cy="411" r="6" fill="#1e3a8a"/>
+  <circle cx="120" cy="411" r="6" fill="#1e3a8a"/>
+  <circle cx="140" cy="411" r="6" fill="#1e3a8a"/>
+  <text x="240" y="473" text-anchor="middle" class="browser-text">TODO1</text>
+  <text x="240" y="515" text-anchor="middle" class="browser-text">TODO2</text>
+  <text x="240" y="565" text-anchor="middle" fill="#93c5fd" font-size="14">（API から取得）</text>
+
+  <!-- Reload arrow -->
+  <line x1="420" y1="495" x2="600" y2="495" stroke="#60a5fa" stroke-width="3"
+        marker-end="url(#arrow-blue)"/>
+  <text x="510" y="480" text-anchor="middle" class="reload-label">リロード</text>
+
+  <!-- Browser after reload (still has data) -->
+  <rect x="620" y="395" width="320" height="200" rx="10" class="browser"/>
+  <rect x="620" y="395" width="320" height="32" rx="10" class="browser-bar"/>
+  <circle cx="640" cy="411" r="6" fill="#1e3a8a"/>
+  <circle cx="660" cy="411" r="6" fill="#1e3a8a"/>
+  <circle cx="680" cy="411" r="6" fill="#1e3a8a"/>
+  <text x="780" y="473" text-anchor="middle" class="browser-text">TODO1</text>
+  <text x="780" y="515" text-anchor="middle" class="browser-text">TODO2</text>
+  <text x="780" y="565" text-anchor="middle" fill="#93c5fd" font-size="14">（再取得して復元）</text>
+
+  <!-- OK badge -->
+  <rect x="970" y="465" width="200" height="60" rx="8" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+  <text x="1070" y="502" text-anchor="middle" class="ok-text">データが残っている！</text>
+  <line x1="940" y1="495" x2="970" y2="495" stroke="#10b981" stroke-width="2"
+        marker-end="url(#arrow-emerald)"/>
+
+  <!-- Down arrows from browsers to server (双方向) -->
+  <line x1="240" y1="600" x2="240" y2="660" stroke="#34d399" stroke-width="2.5"
+        stroke-dasharray="8 5" marker-end="url(#arrow-emerald)"/>
+  <line x1="780" y1="660" x2="780" y2="600" stroke="#60a5fa" stroke-width="2.5"
+        marker-end="url(#arrow-blue)"/>
+
+  <!-- Server + DB -->
+  <rect x="80" y="660" width="860" height="100" rx="10" class="server"/>
+  <text x="510" y="697" text-anchor="middle" class="server-text">FastAPI サーバー ＋ SQLite</text>
+  <text x="510" y="730" text-anchor="middle" class="db-text">データは常にDBに保存 ← ここにデータがあるから残る</text>
+</svg>
