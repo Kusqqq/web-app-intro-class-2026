@@ -8,16 +8,6 @@
 
 const API_URL = "/todos";
 
-// --- ページ読み込み時の初期化 ---
-document.addEventListener("DOMContentLoaded", () => {
-  loadTodos();
-
-  document.getElementById("add-button").addEventListener("click", addTodo);
-  document.getElementById("todo-input").addEventListener("keypress", (e) => {
-    if (e.key === "Enter") addTodo();
-  });
-});
-
 // ============================================================
 // TODO操作（CRUD）
 // ============================================================
@@ -102,6 +92,7 @@ async function deleteTodo(id) {
  * TODOリストを描画する
  *
  * 注意: この関数にはXSS脆弱性があります！
+ *       第7回と同じく <label class="todo-label"> で checkbox + span を包む構造です。
  */
 function renderTodos(todos) {
   const list = document.getElementById("todo-list");
@@ -109,13 +100,16 @@ function renderTodos(todos) {
 
   todos.forEach((todo) => {
     const li = document.createElement("li");
-    li.className = "todo-item";
+    li.className = "todo-item" + (todo.done ? " done" : "");
 
     // TODO(実習2): XSS脆弱性を修正してください
     //   innerHTML を使うと、ユーザー入力がHTMLとして解釈されてしまいます。
     //   createElement + textContent に書き換えてください。
     //
-    //   修正後:
+    //   修正後（第7回と同じ構造）:
+    //     const label = document.createElement("label");
+    //     label.className = "todo-label";
+    //
     //     const checkbox = document.createElement("input");
     //     checkbox.type = "checkbox";
     //     checkbox.className = "todo-checkbox";
@@ -123,24 +117,28 @@ function renderTodos(todos) {
     //     checkbox.addEventListener("change", () => toggleTodo(todo.id, todo.done));
     //
     //     const titleSpan = document.createElement("span");
-    //     titleSpan.className = "todo-title" + (todo.done ? " done" : "");
+    //     titleSpan.className = "todo-title";
     //     titleSpan.textContent = todo.title;
+    //
+    //     label.appendChild(checkbox);
+    //     label.appendChild(titleSpan);
     //
     //     const deleteBtn = document.createElement("button");
     //     deleteBtn.className = "delete-button";
     //     deleteBtn.textContent = "削除";
     //     deleteBtn.addEventListener("click", () => deleteTodo(todo.id));
     //
-    //     li.appendChild(checkbox);
-    //     li.appendChild(titleSpan);
+    //     li.appendChild(label);
     //     li.appendChild(deleteBtn);
 
     // 危険！ innerHTML を使用（XSS脆弱性あり）
     li.innerHTML = `
-      <input type="checkbox" class="todo-checkbox"
-        ${todo.done ? "checked" : ""}
-        onchange="toggleTodo(${todo.id}, ${todo.done})">
-      <span class="todo-title ${todo.done ? "done" : ""}">${todo.title}</span>
+      <label class="todo-label">
+        <input type="checkbox" class="todo-checkbox"
+          ${todo.done ? "checked" : ""}
+          onchange="toggleTodo(${todo.id}, ${todo.done})">
+        <span class="todo-title">${todo.title}</span>
+      </label>
       <button class="delete-button" onclick="deleteTodo(${todo.id})">削除</button>
     `;
 
@@ -162,3 +160,15 @@ function renderTodos(todos) {
 //       errorDiv.style.display = "none";
 //     }, 5000);
 //   }
+
+// ============================================================
+// イベントリスナー
+// ============================================================
+
+document.getElementById("todo-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  addTodo();
+});
+
+// ページ読み込み時にTODO一覧を取得
+loadTodos();

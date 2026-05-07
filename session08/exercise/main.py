@@ -111,13 +111,14 @@ def update_todo(todo_id: int, todo: TodoUpdate):
     with get_db_connection() as conn:
         cursor = conn.cursor()
 
+        # 第7回の正解と同じく、レスポンスで title を返すため既存レコードを先に取得する
+        cursor.execute("SELECT * FROM todos WHERE id = ?", (todo_id,))
+        existing = cursor.fetchone()
+
         # TODO(実習6): 存在しないTODOの場合に404を返してください
         #   ヒント:
-        #     cursor.execute("SELECT * FROM todos WHERE id = ?", (todo_id,))
-        #     existing = cursor.fetchone()
         #     if existing is None:
         #         raise HTTPException(status_code=404, detail="TODO not found")
-        #   （existing["title"] は後段でレスポンスに含めるのに使います）
 
         # TODO(実習4): パラメータバインディングに修正してください
         #   修正後:
@@ -130,9 +131,7 @@ def update_todo(todo_id: int, todo: TodoUpdate):
         )
 
         conn.commit()
-        # API設計書に合わせて title も返す
-        # return {"id": todo_id, "title": existing["title"], "done": todo.done}
-        return {"id": todo_id, "done": todo.done}
+        return {"id": todo_id, "title": existing["title"], "done": todo.done}
 
 
 @app.delete("/todos/{todo_id}")

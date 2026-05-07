@@ -24,26 +24,27 @@ body {
   color: white;
   padding: 16px 24px;
   text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header h1 {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: bold;
 }
 
-/* --- メインカード --- */
+/* --- TODOカード --- */
 .todo-card {
   background-color: white;
   max-width: 600px;
   width: 100%;
-  margin: 40px auto;
+  margin: 24px auto;
   padding: 32px;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   flex: 1;
 }
 
-/* --- エラーメッセージ --- */
+/* --- エラーメッセージ（第8回で追加） --- */
 .error-message {
   background-color: #fee2e2;
   color: #dc2626;
@@ -58,7 +59,7 @@ body {
 .input-area {
   display: flex;
   gap: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
 .todo-input {
@@ -67,11 +68,11 @@ body {
   border: 2px solid #d1d5db;
   border-radius: 8px;
   font-size: 16px;
-  transition: border-color 0.2s;
+  outline: none;
+  transition: border-color 0.3s;
 }
 
 .todo-input:focus {
-  outline: none;
   border-color: #2563eb;
 }
 
@@ -82,8 +83,9 @@ body {
   border: none;
   border-radius: 8px;
   font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.3s;
   white-space: nowrap;
 }
 
@@ -99,36 +101,46 @@ body {
 .todo-item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 12px 16px;
-  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 8px;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
   transition: background-color 0.2s;
 }
 
 .todo-item:hover {
-  background-color: #f9fafb;
+  background-color: #eff6ff;
 }
 
-.todo-item:last-child {
-  border-bottom: none;
+.todo-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
 }
 
-/* --- チェックボックス --- */
 .todo-checkbox {
   width: 20px;
   height: 20px;
-  margin-right: 12px;
   cursor: pointer;
   accent-color: #2563eb;
 }
 
-/* --- TODOタイトル --- */
 .todo-title {
-  flex: 1;
   font-size: 16px;
+  line-height: 1.5;
   word-break: break-word;
 }
 
-.todo-title.done {
+/* --- 完了状態 --- */
+.todo-item.done {
+  background-color: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.todo-item.done .todo-title {
   text-decoration: line-through;
   color: #9ca3af;
 }
@@ -136,32 +148,38 @@ body {
 /* --- 削除ボタン --- */
 .delete-button {
   padding: 6px 12px;
-  background-color: #fee2e2;
-  color: #dc2626;
-  border: 1px solid #fecaca;
+  background-color: transparent;
+  color: #9ca3af;
+  border: 1px solid #d1d5db;
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
-  transition: background-color 0.2s;
-  margin-left: 8px;
+  transition: all 0.3s;
 }
 
 .delete-button:hover {
-  background-color: #fecaca;
+  background-color: #fef2f2;
+  color: #dc2626;
+  border-color: #fca5a5;
 }
 
-/* --- フッター --- */
+/* --- ページフッター --- */
 .footer {
+  background-color: #374151;
+  color: #9ca3af;
   text-align: center;
   padding: 16px;
-  color: #9ca3af;
   font-size: 14px;
 }
 
 /* --- レスポンシブ --- */
 @media (max-width: 480px) {
+  .header h1 {
+    font-size: 20px;
+  }
+
   .todo-card {
-    margin: 16px;
+    margin: 12px;
     padding: 16px;
   }
 
@@ -171,9 +189,5 @@ body {
 
   .todo-button {
     width: 100%;
-  }
-
-  .header h1 {
-    font-size: 20px;
   }
 }

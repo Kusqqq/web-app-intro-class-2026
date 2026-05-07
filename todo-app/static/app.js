@@ -5,16 +5,6 @@
 
 const API_URL = "/todos";
 
-// --- ページ読み込み時の初期化 ---
-document.addEventListener("DOMContentLoaded", () => {
-  loadTodos();
-
-  document.getElementById("add-button").addEventListener("click", addTodo);
-  document.getElementById("todo-input").addEventListener("keypress", (e) => {
-    if (e.key === "Enter") addTodo();
-  });
-});
-
 // ============================================================
 // TODO操作（CRUD）
 // ============================================================
@@ -123,7 +113,7 @@ async function deleteTodo(id) {
 // ============================================================
 
 /**
- * TODOリストを描画する
+ * TODOリストを描画する（XSS対策: createElement + textContent）
  */
 function renderTodos(todos) {
   const list = document.getElementById("todo-list");
@@ -131,7 +121,10 @@ function renderTodos(todos) {
 
   todos.forEach((todo) => {
     const li = document.createElement("li");
-    li.className = "todo-item";
+    li.className = "todo-item" + (todo.done ? " done" : "");
+
+    const label = document.createElement("label");
+    label.className = "todo-label";
 
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
@@ -140,16 +133,18 @@ function renderTodos(todos) {
     checkbox.addEventListener("change", () => toggleTodo(todo.id, todo.done));
 
     const titleSpan = document.createElement("span");
-    titleSpan.className = "todo-title" + (todo.done ? " done" : "");
+    titleSpan.className = "todo-title";
     titleSpan.textContent = todo.title;
+
+    label.appendChild(checkbox);
+    label.appendChild(titleSpan);
 
     const deleteBtn = document.createElement("button");
     deleteBtn.className = "delete-button";
     deleteBtn.textContent = "削除";
     deleteBtn.addEventListener("click", () => deleteTodo(todo.id));
 
-    li.appendChild(checkbox);
-    li.appendChild(titleSpan);
+    li.appendChild(label);
     li.appendChild(deleteBtn);
 
     list.appendChild(li);
@@ -168,3 +163,15 @@ function showError(message) {
     errorDiv.style.display = "none";
   }, 5000);
 }
+
+// ============================================================
+// イベントリスナー
+// ============================================================
+
+document.getElementById("todo-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  addTodo();
+});
+
+// ページ読み込み時にTODO一覧を取得
+loadTodos();
