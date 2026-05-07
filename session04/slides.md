@@ -23,9 +23,6 @@ style: |
   table {
     font-size: 22px;
   }
-  div.mermaid {
-    all: unset;
-  }
 ---
 
 # 第4回: JavaScript基礎 — TODOアプリに動きをつける
@@ -66,12 +63,7 @@ JavaScriptを使って、TODOアプリに **動き** をつける
 
 ## 前回までの振り返り
 
-<div class="mermaid">
-graph LR
-    A["第2回: HTML"] -->|"骨格を作った"| B["第3回: CSS"]
-    B -->|"見た目を整えた"| C["第4回: JS"]
-    style C fill:#2563eb,stroke:#1d4ed8,color:#fff
-</div>
+![width:1100](images/progress.svg)
 
 > 今日ここ！ → TODOアプリに「動き」をつける
 
@@ -104,10 +96,7 @@ graph LR
 
 ### 実行場所
 
-<div class="mermaid">
-graph LR
-    A["ブラウザ（クライアント側）で実行"] --> B["ユーザーのPC上でプログラムが動く"]
-</div>
+![width:1100](images/js-execution.svg)
 
 > 今回は全てブラウザ上で動作します
 
@@ -494,17 +483,7 @@ showTodos(todos);
 
 ブラウザはHTMLを読み込むと、内部的に「ツリー構造」のデータに変換します。
 
-<div class="mermaid">
-graph LR
-    A["document"] --> B["html"]
-    B --> C["head"]
-    B --> D["body"]
-    D --> E["h1<br/>TODO"]
-    D --> F["input"]
-    D --> G["ul"]
-    G --> H["li<br/>買い物"]
-    G --> I["li<br/>勉強"]
-</div>
+![height:440](images/dom-tree.svg)
 
 > この **ツリー構造** を JavaScript から操作するのが **DOM操作** です
 
@@ -638,14 +617,7 @@ addItemBtn.addEventListener("click", () => {
 
 ## TODOアプリの処理の流れ
 
-<div class="mermaid">
-graph LR
-    A["テキストを入力"] --> B["追加ボタン<br/>クリック"]
-    B --> C["入力値を取得"]
-    C --> D["todos配列に追加"]
-    D --> E["DOM再描画"]
-    E --> F["入力欄クリア"]
-</div>
+![width:1150](images/todo-flow.svg)
 
 ---
 
@@ -883,16 +855,7 @@ function render() {
 
 ### なぜ？
 
-<div class="mermaid">
-graph LR
-    subgraph Browser["ブラウザ（クライアント）"]
-        A["let todos = []<br/>（メモリ上のデータ）"]
-    end
-    B["リロード（F5）"] --> C["JSが最初から実行"]
-    C --> D["todosは空に戻る"]
-    D --> E["データは全て失われる"]
-    style E fill:#dc2626,stroke:#b91c1c,color:#fff
-</div>
+![width:1100](images/memory-loss.svg)
 
 > JavaScriptの変数はブラウザの **メモリ上** にしか存在しない。
 > リロードやブラウザを閉じると、メモリはクリアされる。
@@ -901,18 +864,7 @@ graph LR
 
 ## どうすればデータを保存できる？
 
-<div class="mermaid">
-graph LR
-    subgraph Client["ブラウザ（JavaScript）"]
-        A["メモリ上のみ<br/>リロードで消える"]
-    end
-    subgraph Server["サーバー（Python/FastAPI）"]
-        B["処理"] --> C["Database<br/>（SQLite）"]
-    end
-    Client -->|"HTTP リクエスト"| Server
-    Server -->|"JSON レスポンス"| Client
-    style C fill:#16a34a,stroke:#15803d,color:#fff
-</div>
+![width:1100](images/client-server.svg)
 
 > データが永続化される！
 
@@ -982,8 +934,3 @@ git push
 1. `app.js` のGitHubのURL
    - 例: `https://github.com/ユーザー名/リポジトリ名/blob/main/session04/exercise/app.js`
 
-
-<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-mermaid.initialize({ startOnLoad: true, theme: 'dark' });
-</script>

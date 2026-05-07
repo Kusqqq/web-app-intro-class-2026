@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 460" font-family="'Hiragino Sans', 'Yu Gothic', 'Meiryo', 'Noto Sans CJK JP', sans-serif">
+  <defs>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <rect x="500" y="20" width="200" height="60" rx="8" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="600" y="58" text-anchor="middle" fill="#dbeafe" font-size="22" font-weight="bold">document</text>
+
+  <rect x="500" y="130" width="200" height="60" rx="8" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="600" y="168" text-anchor="middle" fill="#dbeafe" font-size="22" font-weight="bold">html</text>
+
+  <line x1="600" y1="80" x2="600" y2="128" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-slate)"/>
+
+  <rect x="280" y="240" width="200" height="60" rx="8" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="380" y="278" text-anchor="middle" fill="#dbeafe" font-size="22" font-weight="bold">head</text>
+
+  <rect x="720" y="240" width="200" height="60" rx="8" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="820" y="278" text-anchor="middle" fill="#dbeafe" font-size="22" font-weight="bold">body</text>
+
+  <line x1="580" y1="190" x2="400" y2="238" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-slate)"/>
+  <line x1="620" y1="190" x2="800" y2="238" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-slate)"/>
+
+  <rect x="540" y="340" width="160" height="80" rx="8" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="620" y="372" text-anchor="middle" fill="#dbeafe" font-size="20" font-weight="bold">h1</text>
+  <text x="620" y="398" text-anchor="middle" fill="#93c5fd" font-size="16">TODO</text>
+
+  <rect x="720" y="340" width="160" height="60" rx="8" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="800" y="378" text-anchor="middle" fill="#dbeafe" font-size="20" font-weight="bold">input</text>
+
+  <rect x="900" y="340" width="160" height="60" rx="8" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="980" y="378" text-anchor="middle" fill="#dbeafe" font-size="20" font-weight="bold">ul</text>
+
+  <line x1="780" y1="300" x2="640" y2="338" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-slate)"/>
+  <line x1="820" y1="300" x2="800" y2="338" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-slate)"/>
+  <line x1="860" y1="300" x2="970" y2="338" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-slate)"/>
+
+  <rect x="1080" y="280" width="100" height="70" rx="8" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="1130" y="307" text-anchor="middle" fill="#dbeafe" font-size="18" font-weight="bold">li</text>
+  <text x="1130" y="332" text-anchor="middle" fill="#93c5fd" font-size="14">買い物</text>
+
+  <rect x="1080" y="370" width="100" height="70" rx="8" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2"/>
+  <text x="1130" y="397" text-anchor="middle" fill="#dbeafe" font-size="18" font-weight="bold">li</text>
+  <text x="1130" y="422" text-anchor="middle" fill="#93c5fd" font-size="14">勉強</text>
+
+  <line x1="1060" y1="370" x2="1078" y2="320" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-slate)"/>
+  <line x1="1060" y1="380" x2="1078" y2="400" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrow-slate)"/>
+</svg>
