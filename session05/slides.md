@@ -23,9 +23,6 @@ style: |
   table {
     font-size: 22px;
   }
-  div.mermaid {
-    all: unset;
-  }
 ---
 
 # 第5回: Python & FastAPI入門 — サーバーサイドを理解する
@@ -76,16 +73,7 @@ style: |
 
 ## フロントエンドだけの限界
 
-<div class="mermaid">
-graph LR
-    subgraph BrowserA["ブラウザA（タブ1）"]
-        A1["TODOデータ（メモリ上）\n- 買い物に行く\n- レポートを書く"]
-    end
-    subgraph BrowserB["ブラウザB（タブ2）"]
-        B1["TODOデータ（別のメモリ）\n（空っぽ）"]
-    end
-    BrowserA -.-|"共有されない!"| BrowserB
-</div>
+![width:1100](images/frontend-limit.svg)
 
 ---
 
@@ -110,27 +98,11 @@ graph LR
 
 **【これまで（フロントエンドのみ）】**
 
-<div class="mermaid">
-graph LR
-    subgraph Browser1["ブラウザ（クライアント）"]
-        A1["HTML + CSS + JavaScript"]
-        A2["データもここで管理\n処理もここで実行"]
-    end
-</div>
+![width:1000](images/before-backend.svg)
 
 **【これから（フロントエンド + バックエンド）】**
 
-<div class="mermaid">
-graph LR
-    subgraph Client["ブラウザ（クライアント）"]
-        B1["HTML + CSS + JS\n見た目を担当"]
-    end
-    subgraph Server["サーバー（バックエンド）"]
-        B2["Python（FastAPI）\nデータ・処理を担当"]
-    end
-    B1 -->|"HTTP"| B2
-    B2 -->|"JSON応答"| B1
-</div>
+![width:1100](images/after-backend.svg)
 
 ---
 
@@ -505,13 +477,7 @@ def read_root():
 
 ## サーバーの起動方法
 
-<div class="mermaid">
-sequenceDiagram
-    participant B as ブラウザ<br/>http://localhost:8000
-    participant S as サーバー<br/>uvicorn → FastAPI → read_root()
-    B->>S: GET /
-    S-->>B: JSON応答
-</div>
+![width:1100](images/server-startup.svg)
 
 起動コマンド:
 ```
@@ -588,14 +554,7 @@ def hello(name: str):
 
 ## コードがサーバーで実行されることを理解する
 
-<div class="mermaid">
-sequenceDiagram
-    participant B as ブラウザ（クライアント）<br/>URL: http://localhost:8000/hello/田中
-    participant S as サーバー（Python / FastAPI）<br/>hello(name="田中")
-    B->>S: HTTPリクエスト GET /hello/田中
-    Note right of S: @app.get("/hello/{name}")<br/>def hello(name: str):<br/>  return {"message": "こんにちは、田中さん！"}
-    S-->>B: JSON応答を返す
-</div>
+![height:430](images/path-param.svg)
 
 ---
 
@@ -657,10 +616,7 @@ sequenceDiagram
 
 ## PythonのdictとJSONの対応
 
-<div class="mermaid">
-graph LR
-    A["Python（辞書 / dict）\n{\n  'id': 1,\n  'title': '...',\n  'done': False\n}"] -->|"変換"| B["JSON\n{\n  'id': 1,\n  'title': '...',\n  'done': false\n}"]
-</div>
+![width:1000](images/dict-json.svg)
 
 ほぼ同じ！ 違いは:
 - Python: `True/False` → JSON: `true/false`
@@ -697,14 +653,7 @@ def get_todos():
 
 ## フロントエンドとバックエンドの連携イメージ
 
-<div class="mermaid">
-sequenceDiagram
-    participant B as ブラウザ（フロントエンド）<br/>JavaScript / fetch("/todos")
-    participant S as サーバー（バックエンド）<br/>Python / FastAPI
-    B->>S: GET /todos
-    S-->>B: JSON応答
-    Note over B,S: サーバー: todos = [...] → return todos<br/>ブラウザ: データを受け取り画面に表示
-</div>
+![height:400](images/frontend-backend-link.svg)
 
 - フロントエンドは「表示」を担当
 - バックエンドは「データ管理」を担当
@@ -794,8 +743,3 @@ FastAPIは自動で **API仕様書** を生成する
 1. `main.py` のGitHubのURL
    - 例: `https://github.com/ユーザー名/リポジトリ名/blob/main/session05/exercise/main.py`
 
-
-<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-mermaid.initialize({ startOnLoad: true, theme: 'dark' });
-</script>
