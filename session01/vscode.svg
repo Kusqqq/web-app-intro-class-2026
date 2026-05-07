@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+<defs>
+    <!-- ウィンドウのドロップシャドウ -->
+    <filter id="shadow-lg" x="-5%" y="-5%" width="110%" height="110%">
+    <feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+    
+    <!-- 説明ラベルのドロップシャドウ -->
+    <filter id="shadow-sm" x="-10%" y="-10%" width="120%" height="120%">
+    <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.1"/>
+    </filter>
+
+    <!-- 引き出し線の先頭マーカー -->
+    <marker id="dot" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" markerUnits="userSpaceOnUse">
+    <circle cx="5" cy="5" r="5" fill="#3b82f6"/>
+    </marker>
+</defs>
+
+<!-- ==============================
+        VS Code ウィンドウ本体
+        ============================== -->
+<g filter="url(#shadow-lg)">
+    <!-- ウィンドウ外枠（クリップ用） -->
+    <rect x="250" y="100" width="700" height="500" rx="8" fill="#1e1e1e"/>
+
+    <!-- 1. タイトルバー -->
+    <rect x="250" y="100" width="700" height="30" fill="#323233"/>
+    <!-- Mac風ウィンドウコントロール -->
+    <circle cx="270" cy="115" r="6" fill="#ff5f56"/>
+    <circle cx="290" cy="115" r="6" fill="#ffbd2e"/>
+    <circle cx="310" cy="115" r="6" fill="#27c93f"/>
+    <!-- タイトルテキスト -->
+    <text x="600" y="120" fill="#cccccc" font-size="12" text-anchor="middle">VS Code - main.js</text>
+
+    <!-- 2. アクティビティバー -->
+    <rect x="250" y="130" width="50" height="440" fill="#333333"/>
+    <!-- アクティブインジケーター -->
+    <rect x="250" y="145" width="2" height="20" fill="#ffffff"/>
+    <!-- アイコン類 -->
+    <!-- エクスプローラー風 -->
+    <rect x="265" y="145" width="16" height="20" rx="2" fill="none" stroke="#ffffff" stroke-width="2"/>
+    <path d="M 269 150 L 277 150 M 269 155 L 275 155" stroke="#ffffff" stroke-width="2"/>
+    <!-- 検索風 -->
+    <circle cx="272" cy="195" r="6" fill="none" stroke="#858585" stroke-width="2"/>
+    <line x1="276" y1="199" x2="282" y2="205" stroke="#858585" stroke-width="2" stroke-linecap="round"/>
+    <!-- ソース管理風 -->
+    <circle cx="273" cy="240" r="3" fill="none" stroke="#858585" stroke-width="2"/>
+    <circle cx="273" cy="254" r="3" fill="none" stroke="#858585" stroke-width="2"/>
+    <circle cx="282" cy="247" r="3" fill="none" stroke="#858585" stroke-width="2"/>
+    <path d="M 273 243 L 273 251 M 273 243 L 280 247" stroke="#858585" stroke-width="2"/>
+    <!-- 拡張機能風 -->
+    <rect x="267" y="285" width="6" height="6" fill="none" stroke="#858585" stroke-width="2"/>
+    <rect x="275" y="285" width="6" height="6" fill="none" stroke="#858585" stroke-width="2"/>
+    <rect x="267" y="293" width="6" height="6" fill="none" stroke="#858585" stroke-width="2"/>
+
+    <!-- 3. サイドバー -->
+    <rect x="300" y="130" width="170" height="440" fill="#252526"/>
+    <text x="315" y="155" fill="#cccccc" font-size="11" font-weight="bold">EXPLORER</text>
+    <!-- ファイルツリー -->
+    <text x="315" y="180" fill="#cccccc" font-size="12" font-weight="bold">v PROJECT</text>
+    <text x="330" y="200" fill="#569cd6" font-size="12">📄 index.html</text>
+    <text x="330" y="220" fill="#cccccc" font-size="12">📄 style.css</text>
+    <rect x="300" y="228" width="170" height="20" fill="#37373d"/> <!-- 選択ハイライト -->
+    <text x="330" y="242" fill="#d7ba7d" font-size="12">📄 main.js</text>
+
+    <!-- 4. エディター領域 -->
+    <!-- タブ部分 -->
+    <rect x="470" y="130" width="480" height="35" fill="#252526"/>
+    <rect x="470" y="130" width="130" height="35" fill="#1e1e1e"/>
+    <rect x="470" y="130" width="130" height="2" fill="#007acc"/> <!-- アクティブタブの青線 -->
+    <text x="490" y="153" fill="#ffffff" font-size="12">📄 main.js</text>
+    <text x="620" y="153" fill="#858585" font-size="12">📄 index.html</text>
+    <!-- コード領域 -->
+    <rect x="470" y="165" width="480" height="265" fill="#1e1e1e"/>
+    <!-- 行番号 -->
+    <text x="495" y="188" fill="#858585" font-size="12" font-family="monospace" text-anchor="end">1</text>
+    <text x="495" y="208" fill="#858585" font-size="12" font-family="monospace" text-anchor="end">2</text>
+    <text x="495" y="228" fill="#858585" font-size="12" font-family="monospace" text-anchor="end">3</text>
+    <text x="495" y="248" fill="#858585" font-size="12" font-family="monospace" text-anchor="end">4</text>
+    <text x="495" y="268" fill="#858585" font-size="12" font-family="monospace" text-anchor="end">5</text>
+    <!-- シンタックスハイライト風のブロック -->
+    <rect x="510" y="180" width="80" height="10" rx="3" fill="#c586c0"/>
+    <rect x="600" y="180" width="120" height="10" rx="3" fill="#4fc1ff"/>
+    <rect x="510" y="200" width="40" height="10" rx="3" fill="#569cd6"/>
+    <rect x="560" y="200" width="150" height="10" rx="3" fill="#ce9178"/>
+    <rect x="510" y="220" width="200" height="10" rx="3" fill="#608b4e"/>
+    <rect x="510" y="240" width="60" height="10" rx="3" fill="#c586c0"/>
+    <rect x="580" y="240" width="100" height="10" rx="3" fill="#dcdcaa"/>
+    <rect x="510" y="260" width="140" height="10" rx="3" fill="#4fc1ff"/>
+    <!-- スクロールバー -->
+    <rect x="935" y="165" width="15" height="265" fill="#1e1e1e"/>
+    <rect x="939" y="170" width="7" height="60" rx="3" fill="#464647"/>
+
+    <!-- 5. パネル領域 -->
+    <!-- タイトル部分 -->
+    <rect x="470" y="430" width="480" height="35" fill="#1e1e1e"/>
+    <line x1="470" y1="430" x2="950" y2="430" stroke="#444444" stroke-width="1"/>
+    <text x="490" y="453" fill="#858585" font-size="11">PROBLEMS</text>
+    <text x="565" y="453" fill="#858585" font-size="11">OUTPUT</text>
+    <text x="630" y="453" fill="#ffffff" font-size="11">TERMINAL</text>
+    <line x1="630" y1="463" x2="685" y2="463" stroke="#007acc" stroke-width="2"/>
+    <!-- ターミナル内容 -->
+    <rect x="470" y="465" width="480" height="105" fill="#1e1e1e"/>
+    <text x="490" y="485" fill="#4fc1ff" font-size="12" font-family="monospace">~/project $ npm run dev</text>
+    <text x="490" y="505" fill="#cccccc" font-size="12" font-family="monospace">&gt; vite v4.0.0 ready in 350 ms</text>
+    <text x="490" y="525" fill="#608b4e" font-size="12" font-family="monospace">&gt; Local: http://localhost:5173/</text>
+
+    <!-- 6. ステータスバー -->
+    <rect x="250" y="570" width="700" height="30" fill="#007acc"/>
+    <text x="260" y="590" fill="#ffffff" font-size="12">🔀 main</text>
+    <text x="320" y="590" fill="#ffffff" font-size="12">❌ 0  ⚠️ 0</text>
+    <text x="830" y="590" fill="#ffffff" font-size="12">Ln 10, Col 5</text>
+    <text x="900" y="590" fill="#ffffff" font-size="12">UTF-8</text>
+</g>
+
+
+<!-- ==============================
+        説明ラベルと引き出し線
+        ============================== -->
+
+<!-- 1. アクティビティバー -->
+<line x1="275" y1="320" x2="240" y2="320" stroke="#3b82f6" stroke-width="2" marker-start="url(#dot)"/>
+<rect x="20" y="275" width="220" height="90" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="2" filter="url(#shadow-sm)"/>
+<text x="130" y="305" font-size="16" font-weight="bold" fill="#1f2937" text-anchor="middle">アクティビティバー</text>
+<text x="130" y="330" font-size="13" fill="#4b5563" text-anchor="middle">主な機能(エクスプローラー、</text>
+<text x="130" y="350" font-size="13" fill="#4b5563" text-anchor="middle">検索など)を切り替える</text>
+
+<!-- 2. サイドバー -->
+<line x1="385" y1="130" x2="385" y2="100" stroke="#3b82f6" stroke-width="2" marker-start="url(#dot)"/>
+<rect x="275" y="10" width="220" height="90" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="2" filter="url(#shadow-sm)"/>
+<text x="385" y="40" font-size="16" font-weight="bold" fill="#1f2937" text-anchor="middle">サイドバー</text>
+<text x="385" y="65" font-size="13" fill="#4b5563" text-anchor="middle">プロジェクトのファイルツリーや</text>
+<text x="385" y="85" font-size="13" fill="#4b5563" text-anchor="middle">検索結果などを表示する</text>
+
+<!-- 3. エディター -->
+<line x1="710" y1="280" x2="950" y2="280" stroke="#3b82f6" stroke-width="2" marker-start="url(#dot)"/>
+<rect x="950" y="235" width="230" height="90" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="2" filter="url(#shadow-sm)"/>
+<text x="1065" y="265" font-size="16" font-weight="bold" fill="#1f2937" text-anchor="middle">エディター</text>
+<text x="1065" y="290" font-size="13" fill="#4b5563" text-anchor="middle">コードを実際に編集する領域。</text>
+<text x="1065" y="310" font-size="13" fill="#4b5563" text-anchor="middle">上部のタブでファイルを切り替え。</text>
+
+<!-- 4. パネル -->
+<line x1="710" y1="500" x2="950" y2="500" stroke="#3b82f6" stroke-width="2" marker-start="url(#dot)"/>
+<rect x="950" y="455" width="230" height="90" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="2" filter="url(#shadow-sm)"/>
+<text x="1065" y="485" font-size="16" font-weight="bold" fill="#1f2937" text-anchor="middle">パネル</text>
+<text x="1065" y="510" font-size="13" fill="#4b5563" text-anchor="middle">ターミナルでのコマンド実行や</text>
+<text x="1065" y="530" font-size="13" fill="#4b5563" text-anchor="middle">エラー出力などを表示する</text>
+
+<!-- 5. ステータスバー -->
+<line x1="600" y1="600" x2="600" y2="650" stroke="#3b82f6" stroke-width="2" marker-start="url(#dot)"/>
+<rect x="490" y="650" width="220" height="90" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="2" filter="url(#shadow-sm)"/>
+<text x="600" y="680" font-size="16" font-weight="bold" fill="#1f2937" text-anchor="middle">ステータスバー</text>
+<text x="600" y="705" font-size="13" fill="#4b5563" text-anchor="middle">Gitのブランチやエラーの数、</text>
+<text x="600" y="725" font-size="13" fill="#4b5563" text-anchor="middle">カーソル位置などの状態を表示</text>
+
+</svg>
