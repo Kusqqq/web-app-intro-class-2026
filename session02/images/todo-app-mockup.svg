@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560"
+     font-family="'Hiragino Sans', 'Yu Gothic', 'Meiryo', 'Noto Sans CJK JP', sans-serif">
+  <defs>
+    <marker id="arrow-slate" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+  <!-- Browser window: Primary blue card -->
+  <rect x="20" y="30" width="600" height="500" rx="12"
+        fill="#1e3a8a" stroke="#3b82f6" stroke-width="2.5"/>
+  <!-- Title bar -->
+  <rect x="20" y="30" width="600" height="44" rx="12"
+        fill="#334155" stroke="#3b82f6" stroke-width="2.5"/>
+  <rect x="20" y="56" width="600" height="18"
+        fill="#334155" stroke="#3b82f6" stroke-width="2.5"/>
+  <line x1="20" y1="74" x2="620" y2="74" stroke="#3b82f6" stroke-width="2"/>
+  <circle cx="45" cy="52" r="6" fill="#94a3b8"/>
+  <circle cx="65" cy="52" r="6" fill="#94a3b8"/>
+  <circle cx="85" cy="52" r="6" fill="#94a3b8"/>
+
+  <!-- Title -->
+  <text x="60" y="135" fill="#dbeafe" font-size="34" font-weight="bold">TODO App</text>
+
+  <!-- Input box -->
+  <rect x="60" y="180" width="380" height="50" rx="6"
+        fill="#334155" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="80" y="212" fill="#cbd5e1" font-size="20">新しいTODOを入力</text>
+  <!-- Add button -->
+  <rect x="455" y="180" width="110" height="50" rx="6"
+        fill="#3b82f6" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="510" y="213" text-anchor="middle" fill="#dbeafe" font-size="22" font-weight="bold">追加</text>
+
+  <!-- TODO list items -->
+  <g transform="translate(60, 290)">
+    <rect x="0" y="0" width="22" height="22" rx="3" fill="none" stroke="#60a5fa" stroke-width="2"/>
+    <text x="40" y="20" fill="#dbeafe" font-size="22">買い物に行く</text>
+  </g>
+  <g transform="translate(60, 340)">
+    <rect x="0" y="0" width="22" height="22" rx="3" fill="none" stroke="#60a5fa" stroke-width="2"/>
+    <text x="40" y="20" fill="#dbeafe" font-size="22">レポートを書く</text>
+  </g>
+  <g transform="translate(60, 390)">
+    <rect x="0" y="0" width="22" height="22" rx="3" fill="none" stroke="#60a5fa" stroke-width="2"/>
+    <text x="40" y="20" fill="#dbeafe" font-size="22">本を読む</text>
+  </g>
+
+  <!-- Annotations: amber (note) callouts with slate dashed leader lines -->
+
+  <!-- Title -->
+  <line x1="680" y1="120" x2="245" y2="120"
+        stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4"
+        marker-end="url(#arrow-slate)"/>
+  <rect x="690" y="92" width="280" height="60" rx="8"
+        fill="#78350f" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="705" y="118" fill="#fde68a" font-size="20" font-weight="bold">タイトル</text>
+  <text x="705" y="142" fill="#fde68a" font-size="18" font-family="'Menlo','Consolas','Courier New',monospace">&lt;h1&gt;</text>
+
+  <!-- Input -->
+  <line x1="680" y1="200" x2="445" y2="205"
+        stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4"
+        marker-end="url(#arrow-slate)"/>
+  <rect x="690" y="172" width="330" height="60" rx="8"
+        fill="#78350f" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="705" y="198" fill="#fde68a" font-size="20" font-weight="bold">テキスト入力</text>
+  <text x="705" y="222" fill="#fde68a" font-size="18" font-family="'Menlo','Consolas','Courier New',monospace">&lt;input type="text"&gt;</text>
+
+  <!-- Button -->
+  <line x1="680" y1="285" x2="565" y2="220"
+        stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4"
+        marker-end="url(#arrow-slate)"/>
+  <rect x="690" y="252" width="280" height="60" rx="8"
+        fill="#78350f" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="705" y="278" fill="#fde68a" font-size="20" font-weight="bold">追加ボタン</text>
+  <text x="705" y="302" fill="#fde68a" font-size="18" font-family="'Menlo','Consolas','Courier New',monospace">&lt;button&gt;</text>
+
+  <!-- Each task -->
+  <line x1="680" y1="362" x2="350" y2="320"
+        stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4"
+        marker-end="url(#arrow-slate)"/>
+  <rect x="690" y="332" width="500" height="60" rx="8"
+        fill="#78350f" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="705" y="358" fill="#fde68a" font-size="20" font-weight="bold">各タスク（チェック + テキスト）</text>
+  <text x="705" y="382" fill="#fde68a" font-size="18" font-family="'Menlo','Consolas','Courier New',monospace">&lt;li&gt; + &lt;input checkbox&gt; + &lt;span&gt;</text>
+
+  <!-- List wrapper -->
+  <line x1="680" y1="445" x2="350" y2="410"
+        stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4"
+        marker-end="url(#arrow-slate)"/>
+  <rect x="690" y="412" width="320" height="60" rx="8"
+        fill="#78350f" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="705" y="438" fill="#fde68a" font-size="20" font-weight="bold">リスト全体</text>
+  <text x="705" y="462" fill="#fde68a" font-size="18" font-family="'Menlo','Consolas','Courier New',monospace">&lt;ul&gt;...&lt;/ul&gt;</text>
+</svg>

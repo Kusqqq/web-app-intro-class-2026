@@ -20,6 +20,7 @@
            <input type="checkbox">
            <span>TODOのテキスト</span>
          </label>
+         <button>削除</button>
        </li>
   ============================================ -->
 
@@ -32,7 +33,7 @@
   <!-- ===== メインコンテンツ ===== -->
   <main>
     <!-- ----- TODO入力エリア ----- -->
-    <!-- ヒント: formタグの中に以下を追加
+    <!-- ヒント: form (id="todo-form") タグの中に以下を追加
          - input (type="text", id="todo-input", placeholder="新しいTODOを入力...")
          - button (type="submit", テキスト: "追加")
     -->
@@ -40,7 +41,7 @@
 
     <!-- ----- TODOリスト表示エリア ----- -->
     <!-- ヒント: ul (id="todo-list") の中に li を3つ以上追加
-         各liにはcheckboxとspanを含める
+         各liには label でcheckboxとspanを包み、後ろに削除ボタンを置く
          1つは checked をつけて完了済みにしてみよう
     -->
 

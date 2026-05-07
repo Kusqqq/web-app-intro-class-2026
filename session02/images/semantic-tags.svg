@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 460"
+     font-family="'Hiragino Sans', 'Yu Gothic', 'Meiryo', 'Noto Sans CJK JP', sans-serif">
+  <!-- Left: div only — slate subdued container (ambiguous, structural) -->
+  <rect x="20" y="20" width="510" height="420" rx="14"
+        fill="#334155" fill-opacity="0.25"
+        stroke="#94a3b8" stroke-width="2" stroke-dasharray="8 5"/>
+  <text x="275" y="60" text-anchor="middle" fill="#cbd5e1" font-size="24" font-weight="bold">&lt;div&gt; だけで書くと...</text>
+
+  <text x="80" y="140" fill="#cbd5e1" font-size="22" font-family="'Menlo','Consolas','Courier New',monospace">&lt;div&gt;</text>
+  <text x="280" y="140" fill="#fde68a" font-size="20">← ヘッダー？本文？</text>
+
+  <text x="120" y="190" fill="#cbd5e1" font-size="22" font-family="'Menlo','Consolas','Courier New',monospace">&lt;div&gt;</text>
+  <text x="280" y="190" fill="#fde68a" font-size="20">← サイドバー？記事？</text>
+
+  <text x="120" y="240" fill="#cbd5e1" font-size="22" font-family="'Menlo','Consolas','Courier New',monospace">&lt;/div&gt;</text>
+  <text x="80" y="290" fill="#cbd5e1" font-size="22" font-family="'Menlo','Consolas','Courier New',monospace">&lt;/div&gt;</text>
+
+  <!-- Conclusion banner: slate -->
+  <rect x="55" y="345" width="440" height="60" rx="10" fill="#334155" stroke="#94a3b8" stroke-width="2"/>
+  <text x="275" y="383" text-anchor="middle" fill="#cbd5e1" font-size="22" font-weight="bold">何の役割か分からない</text>
+
+  <!-- Right: semantic tags — emerald container (success, clear meaning) -->
+  <rect x="570" y="20" width="510" height="420" rx="14"
+        fill="#064e3b" fill-opacity="0.3"
+        stroke="#10b981" stroke-width="2"/>
+  <text x="825" y="60" text-anchor="middle" fill="#a7f3d0" font-size="24" font-weight="bold">セマンティックタグを使うと...</text>
+
+  <text x="630" y="140" fill="#93c5fd" font-size="22" font-family="'Menlo','Consolas','Courier New',monospace">&lt;header&gt;</text>
+  <text x="800" y="140" fill="#a7f3d0" font-size="20">← ヘッダーとわかる</text>
+
+  <text x="630" y="190" fill="#93c5fd" font-size="22" font-family="'Menlo','Consolas','Courier New',monospace">&lt;main&gt;</text>
+  <text x="800" y="190" fill="#a7f3d0" font-size="20">← メインとわかる</text>
+
+  <text x="630" y="240" fill="#93c5fd" font-size="22" font-family="'Menlo','Consolas','Courier New',monospace">&lt;footer&gt;</text>
+  <text x="800" y="240" fill="#a7f3d0" font-size="20">← フッターとわかる</text>
+
+  <text x="630" y="295" fill="#cbd5e1" font-size="20" font-style="italic">タグだけで構造が読める</text>
+
+  <!-- Conclusion banner: emerald -->
+  <rect x="605" y="345" width="440" height="60" rx="10" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+  <text x="825" y="383" text-anchor="middle" fill="#a7f3d0" font-size="22" font-weight="bold">意味と役割が明確</text>
+</svg>
