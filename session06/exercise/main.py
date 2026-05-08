@@ -37,17 +37,21 @@ DATABASE = "todo.db"
 
 # --- Pydantic モデル（リクエストの型定義） ---
 
+
 class TodoCreate(BaseModel):
     """TODO新規作成用"""
+
     title: str
 
 
 class TodoUpdate(BaseModel):
     """TODO更新用"""
+
     done: bool
 
 
 # --- データベース接続 ---
+
 
 def get_db():
     """データベース接続を取得する"""
@@ -57,6 +61,7 @@ def get_db():
 
 
 # --- API エンドポイント ---
+
 
 @app.get("/")
 def root():

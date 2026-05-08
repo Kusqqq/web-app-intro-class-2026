@@ -18,7 +18,6 @@ const todoForm = document.getElementById("todo-form");
 const todoInput = document.getElementById("todo-input");
 const todoList = document.getElementById("todo-list");
 
-
 // ============================================================
 // addTodo: 新しいTODOを配列に追加する
 //
@@ -78,9 +77,7 @@ function deleteTodo(index) {
 // ============================================================
 function render() {
   // ステップ1: リストを空にする
-
   // ステップ2: todosが空の場合の処理
-
   // ステップ3: todosの各要素を描画
   // ヒント:
   //   todos.forEach((todo, index) => {
@@ -111,7 +108,6 @@ function render() {
   //     li.appendChild(deleteBtn);
   //     todoList.appendChild(li);
   //   });
-
 }
 
 // ============================================================

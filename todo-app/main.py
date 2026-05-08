@@ -54,6 +54,7 @@ def get_db_connection():
 
 # --- Pydanticモデル ---
 
+
 class TodoCreate(BaseModel):
     title: str = Field(min_length=1, max_length=100)
 
@@ -63,6 +64,7 @@ class TodoUpdate(BaseModel):
 
 
 # --- APIエンドポイント ---
+
 
 @app.get("/todos")
 def get_todos():

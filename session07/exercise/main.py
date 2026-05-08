@@ -18,8 +18,8 @@ from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-
 # --- Pydantic モデル ---
+
 
 class TodoCreate(BaseModel):
     title: str
@@ -57,6 +57,7 @@ def get_db():
 
 
 # --- APIエンドポイント（第6回の正解） ---
+
 
 @app.get("/todos")
 def get_todos():

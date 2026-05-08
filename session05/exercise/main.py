@@ -9,6 +9,7 @@
 起動方法:
   python main.py
 """
+
 import uvicorn
 from fastapi import FastAPI
 
@@ -48,4 +49,4 @@ def root():
 #       return todos
 
 if __name__ == "__main__":
-  uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000)

@@ -120,7 +120,6 @@ function renderTodos(todos) {
     li.appendChild(deleteBtn);
     todoList.appendChild(li);
   });
-
 }
 
 // -----------------------------------------------------

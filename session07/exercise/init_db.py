@@ -32,10 +32,7 @@ def init_db():
         ("部屋を掃除する", True),
     ]
 
-    conn.executemany(
-        "INSERT INTO todos (title, done) VALUES (?, ?)",
-        sample_todos
-    )
+    conn.executemany("INSERT INTO todos (title, done) VALUES (?, ?)", sample_todos)
 
     conn.commit()
     conn.close()
